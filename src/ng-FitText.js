@@ -40,11 +40,11 @@
           var maxFontSize = attrs.fittextMax || config.max || Number.POSITIVE_INFINITY;
 
           var resizer = function() {
-+            if ( element[0].offsetHeight * element[0].offsetWidth === 0 ) {
-+              // Skip setting the font size if the element height or width
-+              // have been set to 0 (or auto) for any reason.
-+              return;
-+            }
+            if ( element[0].offsetHeight * element[0].offsetWidth === 0 ) {
+              // Skip setting the font size if the element height or width
+              // have been set to 0 (or auto) for any reason.
+              return;
+            }
             var fontSizeInit = 10;
             element[0].style.fontSize = fontSizeInit+'px';
             var ratio = fontSizeInit / element[0].offsetWidth / nl;
