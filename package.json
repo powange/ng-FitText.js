@@ -1,12 +1,12 @@
 {
   "name": "ng-fittext",
-  "version": "3.3.3",
+  "version": "3.3.4",
   "description": "An AngularJS directive for inflating web type",
-  "homepage": "https://github.com/patrickmarabeas/ng-FitText.js",
-  "bugs": "https://github.com/patrickmarabeas/ng-FitText.js/issues",
+  "homepage": "https://github.com/powange/ng-FitText.js",
+  "bugs": "https://github.com/powange/ng-FitText.js/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/patrickmarabeas/ng-FitText.js.git"
+    "url": "git://github.com/powange/ng-FitText.js.git"
   },
   "license": "MIT",
   "main": "src/ng-FitText.js",
