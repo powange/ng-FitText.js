@@ -31,7 +31,6 @@
           angular.extend(config, fitTextConfig.config);
 
           element[0].style.display = 'inline-block';
-          element[0].style.lineHeight = '1';
 
           var parent = element.parent();
           var compressor = attrs.fittext || 1;
@@ -41,8 +40,14 @@
           var maxFontSize = attrs.fittextMax || config.max || Number.POSITIVE_INFINITY;
 
           var resizer = function() {
-            element[0].style.fontSize = '10px';
-            var ratio = element[0].offsetHeight / element[0].offsetWidth / nl;
++            if ( element[0].offsetHeight * element[0].offsetWidth === 0 ) {
++              // Skip setting the font size if the element height or width
++              // have been set to 0 (or auto) for any reason.
++              return;
++            }
+            var fontSizeInit = 10;
+            element[0].style.fontSize = fontSizeInit+'px';
+            var ratio = fontSizeInit / element[0].offsetWidth / nl;
             element[0].style.fontSize = Math.max(
               Math.min((parent[0].offsetWidth - 6) * ratio * compressor,
                 parseFloat(maxFontSize)
